@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Projeto feito no curso de 'React: desenvolvendo com JavaScript' da Alura.
+Projeto feito no curso de 'React migrando para TypeScript' da Alura.
 
 ## Instruções
 

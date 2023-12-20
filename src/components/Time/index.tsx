@@ -1,8 +1,15 @@
-import PropTypes from 'prop-types';
 import "./Time.css";
 import Colaborador from '../Colaborador';
+import IColaborador from '../../compartilhado/interfaces/IColadorador';
 
-const Time = (props) => {
+interface TimeProps {
+  nome: string;
+  corPrimaria: string;
+  corSecundaria: string;
+  colaboradores: IColaborador[];
+}
+
+const Time = (props: TimeProps) => {
   return (
     (props.colaboradores.length > 0) ? (
       <section className="time" style={{ backgroundColor: props.corSecundaria }}>
@@ -24,12 +31,5 @@ const Time = (props) => {
     ) : ""
   );
 };
-
-Time.propTypes = {
-  nome: PropTypes.string,
-  corPrimaria: PropTypes.string,
-  corSecundaria: PropTypes.string,
-  colaboradores: PropTypes.array,
-}
 
 export default Time;

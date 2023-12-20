@@ -1,7 +1,13 @@
-import PropTypes from 'prop-types';
 import "./Colaborador.css";
 
-const Colaborador = ({ imagem, nome, cargo, corDeFundo }) => {
+interface ColaboradorProps {
+  imagem: string;
+  nome: string;
+  cargo: string;
+  corDeFundo: string;
+}
+
+const Colaborador = ({ imagem, nome, cargo, corDeFundo }: ColaboradorProps) => {
   return (
     <div className='colaborador'>
       <div className='cabecalho' style={{ backgroundColor: corDeFundo }}>
@@ -15,12 +21,5 @@ const Colaborador = ({ imagem, nome, cargo, corDeFundo }) => {
     </div>
   );
 };
-
-Colaborador.propTypes = {
-  imagem: PropTypes.string,
-  nome: PropTypes.string,
-  cargo: PropTypes.string,
-  corDeFundo: PropTypes.string,
-}
 
 export default Colaborador;

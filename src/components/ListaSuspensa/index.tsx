@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 import "./ListaSuspensa.css";
 
-const ListaSuspensa = (props) => {
+interface ListaSuspensaProps {
+  label: string;
+  itens: string[];
+  obrigatorio: boolean;
+  valor: string;
+  aoAlterado: (valor: string) => void;
+}
+
+const ListaSuspensa = (props: ListaSuspensaProps) => {
   return (
     <div className="lista-suspensa">
       <label htmlFor="">{props.label}</label>
@@ -20,13 +28,5 @@ const ListaSuspensa = (props) => {
     </div>
   );
 };
-
-ListaSuspensa.propTypes = {
-  label: PropTypes.string,
-  itens: PropTypes.array,
-  obrigatorio: PropTypes.bool,
-  valor: PropTypes.any,
-  aoAlterado: PropTypes.any
-}
 
 export default ListaSuspensa;

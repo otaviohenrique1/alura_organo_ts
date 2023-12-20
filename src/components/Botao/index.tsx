@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
+import React, { ReactNode } from "react";
 import "./Botao.css";
 
-const Botao = (props) => {
+interface BotaoProps {
+  children: ReactNode;
+}
+
+const Botao = (props: BotaoProps) => {
   return (
     <button className="botao">
       {props.children}
     </button>
   );
 };
-
-Botao.propTypes = {
-  children: PropTypes.node
-}
 
 export default Botao;
