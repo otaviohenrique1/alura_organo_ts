@@ -3,15 +3,20 @@ import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
-import PropTypes from 'prop-types';
+import IColaborador from "../../compartilhado/interfaces/IColadorador";
 
-const Formulario = (props) => {
+interface FormularioProps {
+  aoColaboradorCadastrado: (colaborador: IColaborador) => void,
+  times: string[],
+}
+
+const Formulario = (props: FormularioProps) => {
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
   const [time, setTime] = useState('');
 
-  const aoSalvar = (evento) => {
+  const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
     props.aoColaboradorCadastrado({
       nome, cargo, imagem, time,
@@ -24,7 +29,7 @@ const Formulario = (props) => {
 
   return (
     <section className="formulario">
-      <form onSubmit={aoSalvar}>
+      <form onSubmit={evento => aoSalvar(evento)}>
         <h2>Preencha os dados para criar o card do colaborador:</h2>
         <CampoTexto
           obrigatorio={true}
@@ -41,6 +46,7 @@ const Formulario = (props) => {
           aoAlterado={valor => setCargo(valor)}
         />
         <CampoTexto
+          obrigatorio={true}
           label="Imagem"
           placeholder="Digite o endereço da imagem"
           valor={imagem}
@@ -58,10 +64,5 @@ const Formulario = (props) => {
     </section>
   );
 };
-
-Formulario.propTypes = {
-  aoColaboradorCadastrado: PropTypes.func,
-  times: PropTypes.array,
-}
 
 export default Formulario;

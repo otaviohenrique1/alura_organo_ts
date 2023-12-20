@@ -54,7 +54,10 @@ function App() {
 
   return (
     <>
-      <Banner enderecoImagem="/images/banner.png" textoAlternativo="O banner principal da página do Organo" />
+      <Banner
+        enderecoImagem="/images/banner.png"
+        textoAlternativo="O banner principal da página do Organo"
+      />
       <Formulario
         aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
         times={times.map((time) => time.nome)}
