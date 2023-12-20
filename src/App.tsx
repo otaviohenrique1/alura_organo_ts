@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import Formulario from './components/Formulario';
 import Time from './components/Time';
 import Rodape from './components/Rodape';
+import IColaborador from './compartilhado/interfaces/IColadorador';
 
 function App() {
   const times = [
@@ -44,9 +45,9 @@ function App() {
 
   ]
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
+  const aoNovoColaboradorAdicionado = (colaborador: IColaborador) => {
     // console.log(colaborador);
     // debugger
     setColaboradores([...colaboradores, colaborador]);
