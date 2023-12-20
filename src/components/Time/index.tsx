@@ -23,6 +23,7 @@ const Time = (props: TimeProps) => {
                 cargo={colaborador.cargo}
                 imagem={colaborador.imagem}
                 corDeFundo={props.corPrimaria}
+                data={colaborador.data}
               />
             );
           })}
